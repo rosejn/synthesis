@@ -1,10 +1,10 @@
 #!/bin/sh
 echo ""
-echo "\033[31mPreparing you for the Jam Challenge...\033[0m"
+echo "\033[31mPreparing you for Overtone...\033[0m"
 echo "\033[31m======================================\033[0m"
 echo ""
 
-echo "\033[33mPulling this Jam's deps...\033[0m"
+echo "\033[33mPulling deps...\033[0m"
 lein deps
 
 echo ""
@@ -17,9 +17,14 @@ echo "\033[33mPulling Overtone's deps...\033[0m"
 cd checkouts/overtone
 lein deps
 
+cd ../overtone-gui
+lein deps
+
 echo ""
 echo "\033[33mMerging deps...\033[0m"
-cp lib/* ../../lib/
+cp checkouts/overtone-gui/lib/* lib
+cp checkouts/overtone/lib/* lib
+rm lib/overtone*.jar
 
 echo ""
 echo "\033[32m*************************\033[0m"

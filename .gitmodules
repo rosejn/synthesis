@@ -1,0 +1,6 @@
+[submodule "checkouts/overtone-gui"]
+	path = checkouts/overtone-gui
+	url = git://github.com/overtone/overtone-gui.git
+[submodule "checkouts/overtone"]
+	path = checkouts/overtone
+	url = git://github.com/overtone/overtone.git
