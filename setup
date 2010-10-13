@@ -1,0 +1,28 @@
+#!/bin/sh
+echo ""
+echo "\033[31mPreparing you for the Jam Challenge...\033[0m"
+echo "\033[31m======================================\033[0m"
+echo ""
+
+echo "\033[33mPulling this Jam's deps...\033[0m"
+lein deps
+
+echo ""
+echo "\033[33mPulling in Overtone as a checkout for your curious perusal...\033[0m"
+git submodule init
+git submodule update
+
+echo ""
+echo "\033[33mPulling Overtone's deps...\033[0m"
+cd checkouts/overtone
+lein deps
+
+echo ""
+echo "\033[33mMerging deps...\033[0m"
+cp lib/* ../../lib/
+
+echo ""
+echo "\033[32m*************************\033[0m"
+echo "\033[32m* OK, get your code on! *\033[0m"
+echo "\033[32m*************************\033[0m"
+echo ""
