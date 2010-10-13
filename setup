@@ -15,9 +15,11 @@ git submodule update
 echo ""
 echo "\033[33mPulling Overtone's deps...\033[0m"
 cd checkouts/overtone
+git checkout master
 lein deps
 
 cd ../overtone-gui
+git checkout master
 lein deps
 
 echo ""
