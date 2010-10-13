@@ -22,6 +22,7 @@ lein deps
 
 echo ""
 echo "\033[33mMerging deps...\033[0m"
+cd ../..
 cp checkouts/overtone-gui/lib/* lib
 cp checkouts/overtone/lib/* lib
 rm lib/overtone*.jar
